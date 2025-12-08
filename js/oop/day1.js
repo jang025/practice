@@ -40,8 +40,71 @@ class Square {
   getArea() {
     return this.a * this.b;
   }
+
+  getHypotenuse() {
+    return Math.sqrt(this.a ** 2 + this.b ** 2);
+  }
+
+  result() {
+    return `The square with side A of ${this.a} and side B of ${
+      this.b
+    } with an area of ${this.getArea()}`;
+  }
 }
 
 const mySquare = new Square(5, 5);
 
 console.log(mySquare.getArea()); // 25
+console.log(mySquare.result());
+
+//! Instance Methods Functions places in a CLASS are called instance methods
+
+//! Inheritance basics
+// inherit functionality from the parent class
+// sub class inherits from super class
+// child class inherits from parent class
+class ShySquare extends Square {
+  describe() {
+    return "Runs and Hides";
+  }
+}
+
+const shySquare = new ShySquare(2, 2);
+console.log(shySquare.getArea()); // 4
+console.log(shySquare.describe());
+
+//! The super keyword (used when we want to add new properties to our child class / sub class)
+//! super calls the parent constructor
+class ColorSquare extends Square {
+  constructor(a, b, color) {
+    super(a, b);
+    this.color = color;
+  }
+}
+
+class ColorMoodSquare extends ColorSquare {
+  constructor(a, b, color, mood) {
+    super(a, b, color);
+    this.mood = mood;
+  }
+}
+const myColorMoodSquare = new ColorMoodSquare(1, 2, "red", "happy");
+console.log(myColorMoodSquare);
+
+//! Static Properties (usually called class attributes or class properties)
+//todo Static methods (usually called class methods as well )
+// Individual pieces of data are on the class and not on instances of the class
+//! we usually put constants or data that are common across all instances of the class
+class Cat {
+  constructor(name, breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+  static species = "felix cactus";
+  static meow() {
+    return "Meow Meow Meow";
+  }
+}
+
+console.log(Cat.species); // felix cactus
+console.log(Cat.meow()); // Meow Meow Meow
