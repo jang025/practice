@@ -56,3 +56,62 @@ At run-time, React will automatically convert types as needed when supplying att
 // ✅ Valid
 <input type="range" min={1} max={20} />
 ```
+
+## Components
+
+A component is a bundle of markup , styles , logic that controls everything about a specific part of the user interface
+
+With React, components are the main mechanism of reuse.
+
+Create a library of high-level reusable UI elements
+
+In React, components are defined as JavaScript functions.
+
+Typically, React components return one or more React elements.
+
+### The big component rule
+
+React components must start with a **Capital Letter**
+
+This is how the JSX compiler can tell whether we're trying to render a built-in HTML tag, or a custom React component.
+
+A React element is a description of a thing we want to create. In some cases, we want to create a _DOM node_, like a h1 element.
+In other cases, we want to create a _component instance_.
+
+## Props
+
+Props are like arguments to a function: they allow us to pass data to our components, so that the components can include customizations based on the data.
+
+1. Passing data to our component
+2. Receving the data in our component
+
+### Default values (to ensure there is fallback value)
+
+We can specify default values for each prop
+
+```jsx
+function GreetingCard({ name = "John" }) {
+  return <h1>Hi {name}</h1>;
+}
+```
+
+## The children prop
+
+children is a special value, a “reserved word” when it comes to props.
+
+```jsx
+root.render(<RedButton>Don't click me</RedButton>);
+
+function RedButton({ children }) {
+  return (
+    <button
+      style={{
+        color: "white",
+        backgroundColor: "red",
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+```
