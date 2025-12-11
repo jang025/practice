@@ -115,3 +115,38 @@ function RedButton({ children }) {
   );
 }
 ```
+
+## Iteration
+
+### Mapping over data
+
+1. Create an array of React Elements
+2. Pass that array to React in the JSX
+
+### Keys
+
+When we give React an array of elements, we also need to help React out by uniquely identifying each element.
+
+**The purpose of a key is to uniquely identify each React element.**
+
+Keys identify a particular React element. It's a property of the element itself, not something that needs to be passed along to the component!
+
+```javascript
+const element = {
+  type: ContactCard,
+  key: "sunita-abc123",
+  props: {
+    name: "Sunita Kumar",
+    job: "Electrical Engineer",
+    email: "sunita.kumar@acme.co",
+  },
+};
+```
+
+#### Key rules
+
+1. the key needs to be applied to the very **top-level element** within the .map() call.
+
+2. When using fragments, it's sometimes required to switch to the long-form React.Fragment, so that we can apply the key: <React.Fragment key={}>
+
+3. Many developers believe that keys have to be globally unique, across the entire application, but this is a misconception. **Keys only have to be unique within their array**.
