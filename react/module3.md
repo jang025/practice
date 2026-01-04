@@ -1,8 +1,22 @@
 # React Hooks
 
-hooks are special functions that allow us to “hook” into React internals. useState allows us to hook into a component instance's state, for example, while useId allows us to create and store a unique identifier on the component instance.
+hooks are special functions that allow us to “hook” into React internals (basically stored in a component instance). useState allows us to hook into a component instance's state, for example, while useId allows us to create and store a unique identifier on the component instance.
 
 ## The useId hook
+
+Use the useId hook when you have two forms that exist on the same page
+
+```javascript
+const id = React.useId();
+```
+
+React hooks “hook into” the component instance. And so this ID lives on the component instance, and can be plucked out during render.
+This means that the value **persists across renders**. id will always be equal to :r0:, in that first instance, on every single render.
+
+Component instance is never changed between re-renders
+The data (state and props) changes , leading to a new rendered output but the underlying component instance never changes
+
+The useId hook is special in one more way: It produces the same value across server and client renders. This is a very special property, and something that would be very difficult to reproduce without a special React-provided solution.
 
 ## Rules of Hooks
 
