@@ -23,3 +23,19 @@ const myAwesomeVariable: string = "So Awesome!";
 const myNumber: number = 42;
 const myBoolean: boolean = true;
 ```
+
+# Type Inference
+
+Typescript compiler ability to infer types from certain values in your code
+
+Typescript can remember a value's type even if you didnt provide a type annotation, and it will enforce that type moving forward
+
+# The any type
+
+Escape hatch : turns off type checking for this variable so you can do your thing
+
+Defeats the purpose of TS and types so use it sparingly
+
+```typescript
+let foundMovies; // inferred type is any
+```

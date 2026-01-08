@@ -52,7 +52,7 @@ React.useEffect(() => {
 }, [count]);
 ```
 
-By specifying [count], we're saying that the effect logic should only run when the count variable changes.
+By specifying count, we're saying that the effect logic should only run when the count variable changes.
 
 Effects always run after the very first render, no matter what we specify in our dependency array.
 
