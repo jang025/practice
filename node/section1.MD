@@ -22,5 +22,3 @@ Ecmascript - (Set of rules) unity and consistency of the way different javascrip
 node.js --> create javascript programs for servers (server-side technology) (C++ application that has V8 embedded in it)
 
 which node --> the path that my node executable file is located
-
-## Libuv

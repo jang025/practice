@@ -27,7 +27,9 @@ But, when we call these functions, they "hook into" React internals. And we can 
 There are two “Rules of Hooks” that we should learn, in order to make sure we're always using hooks as React expects.
 
 1. Hooks have to be called within the scope of a React application. We can't call them outside of our React components.
-2. We have to call our hooks at the top level of the component.(Not allowed to call hooks conditionally)
+2. We have to call our hooks at the top level of the component.**(Not allowed to call hooks conditionally)**
+
+React Hooks are implemented in a way where the order matter.
 
 ## Immutability Revisited
 

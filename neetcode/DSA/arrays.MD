@@ -15,3 +15,9 @@ Each value is stored contiguously in the RAM, just like an array.
 Each integer occupies 4 bytes of space, hence the addresses are 4 bytes apart.
 
 Each character occupies 1 byte of space, hence the addresses are 1 byte apart.
+
+# Static Arrays
+
+In statically typed languages like Java, C++ and C#, arrays have to have an allocated size and type when initialized. These are known as static arrays.
+
+They are called static because the size of the array cannot change once declared. And once the array is full, it can not store additional elements. Some dynamically typed languages such as Python and JavaScript do not have static arrays to begin with.
