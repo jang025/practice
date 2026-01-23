@@ -22,3 +22,9 @@ Ecmascript - (Set of rules) unity and consistency of the way different javascrip
 node.js --> create javascript programs for servers (server-side technology) (C++ application that has V8 embedded in it)
 
 which node --> the path that my node executable file is located
+
+Hardware - Disk (SDD , HDD) , RAM , CPU(CACHE lies within the CPU) , Network Card
+
+Operating System - A way of communication between your hardware and your programs / processes
+
+It will allocate some RAM , some amount of memory to a specific process , fetch some data from the storage

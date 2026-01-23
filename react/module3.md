@@ -31,6 +31,8 @@ There are two “Rules of Hooks” that we should learn, in order to make sure w
 
 React Hooks are implemented in a way where the order matter.
 
+Need to make sure that we're calling the exact same hooks in the exact same order on every single render.
+
 ## Immutability Revisited
 
 ## Refs

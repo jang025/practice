@@ -21,3 +21,12 @@ Each character occupies 1 byte of space, hence the addresses are 1 byte apart.
 In statically typed languages like Java, C++ and C#, arrays have to have an allocated size and type when initialized. These are known as static arrays.
 
 They are called static because the size of the array cannot change once declared. And once the array is full, it can not store additional elements. Some dynamically typed languages such as Python and JavaScript do not have static arrays to begin with.
+
+# Dynamic Arrays
+
+Dynamic Arrays are a much more common alternative to static arrays. They are useful because they can grow as elements are added. In JavaScript and Python, these are the default arrays.
+
+Unlike static arrays, with dynamic arrays we don’t have to specify a size upon initialization.
+
+In different languages, dynamic arrays may be assigned a default size - Java being 10 and C# being 4.
+Regardless, these are automatically resized at runtime as the arrays grow.
