@@ -19,5 +19,15 @@ WHERE LENGTH(first_name) > 10 OR LENGTH(last_name) > 10;
 
 -- LEFT & RIGHT
 
-SELECT RIGHT(LEFT(first_name,2),1)first_name
+SELECT RIGHT(LEFT(first_name,2),1),first_name
 FROM customer;
+
+
+SELECT email, LEFT(RIGHT(email,4),1)
+FROM customer;
+
+
+-- Concatenate
+SELECT LEFT(first_name,1) || LEFT(last_name,1)
+FROM customer;
+

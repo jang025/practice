@@ -30,3 +30,15 @@ Unlike static arrays, with dynamic arrays we don’t have to specify a size upon
 
 In different languages, dynamic arrays may be assigned a default size - Java being 10 and C# being 4.
 Regardless, these are automatically resized at runtime as the arrays grow.
+
+# Stacks
+
+A stack is a data structure that supports a subset of operations from a dynamic array. With a stack you may only add and delete elements from one end of the array (referred to as the top of the stack).
+
+Stacks are a dynamic data structure that operate on a LIFO (Last In First Out) manner.
+
+Push - O(1)
+
+Pop - O(1)
+
+Peek - O(1)

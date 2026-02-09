@@ -35,7 +35,96 @@ Need to make sure that we're calling the exact same hooks in the exact same orde
 
 ## Immutability Revisited
 
+Need to remember that **react state is immutable**
+
+When we set a new state (create a new state) , we are creating a brand new state that is stored in a different place in memory (even if the value is exactly identical)
+
+We can look at state as **snapshots(data available at that moment in time)**
+
+every time that state changes, we create a snapshot that captures the current value of that state variable.
+
 ## Refs
+
+### React state is suppose to be immutable but React ref is suppose to be mutated
+
+Capture a reference to the DOM node (canvas tag for example), on the very first reference,
+and then reuse that work across subsequent ones
+
+The ref object created by the useRef hook should be thought of as a box. We can store whatever we want in this box: DOM nodes, numbers, arrays, objects, functions, etc.
+
+That said, the primary use case for refs is to store **DOM nodes**. It's pretty rare for me to need to store anything else in a ref.
+
+```jsx
+import React from "react";
+
+function ArtGallery() {
+  // 1. Create a “ref”, a box that holds a value.
+  const canvasRef = React.useRef(); // { current: undefined }
+
+  return (
+    <main>
+      <div className="canvas-wrapper">
+        <canvas
+          // 2. Capture a reference to the <canvas> tag,
+          // and put it in the “canvasRef” box.
+          //
+          // { current: <canvas> }
+          ref={canvasRef}
+          width={200}
+          height={200}
+        />
+      </div>
+
+      <button
+        onClick={() => {
+          // 3. Pluck the <canvas> tag from the box,
+          // and pass it onto our `draw` function.
+          draw(canvasRef.current);
+        }}
+      >
+        Draw!
+      </button>
+    </main>
+  );
+}
+
+function draw(canvas) {
+  const ctx = canvas.getContext("2d");
+
+  ctx.clearRect(0, 0, 200, 200);
+
+  ctx.beginPath();
+  ctx.rect(30, 90, 140, 20);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.arc(100, 97, 75, 1 * Math.PI, 2 * Math.PI);
+  ctx.fillStyle = "tomato";
+  ctx.fill();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.arc(100, 103, 75, 0, 1 * Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.arc(100, 100, 25, 0, 2 * Math.PI);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.arc(100, 100, 19, 0, 2 * Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.closePath();
+}
+
+export default ArtGallery;
+```
 
 ## Side Effects
 
